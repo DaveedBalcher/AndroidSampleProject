@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AndroidSampleProject</string>
+    <string name="NAME_LEO">Leo</string>
+    <string name="DEFAULT_SCORE">90%</string>
+    <string name="DEFAULT_DATE">24/01/2019   08:38:02</string>
+</resources>
