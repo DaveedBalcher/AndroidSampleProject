@@ -3,4 +3,5 @@
     <string name="NAME_LEO">Leo</string>
     <string name="DEFAULT_SCORE">90%</string>
     <string name="DEFAULT_DATE">24/01/2019   08:38:02</string>
+    <string name="SCORES_BUTTON">Score</string>
 </resources>
