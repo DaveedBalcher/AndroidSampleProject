@@ -1,5 +1,8 @@
 package davidbalcher.androidsampleproject;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -46,6 +49,33 @@ public class ScoreTableModel {
             }
         }
         return result;
+    }
+
+    public void setWithJson(JSONArray result) {
+
+        try {
+            setScoresPerGender(result.getJSONObject(0).getJSONArray("males"),"m");
+            setScoresPerGender(result.getJSONObject(1).getJSONArray("females"),"f");
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void setScoresPerGender(JSONArray json, String gender) {
+
+        for (int i=0; i < json.length(); i++) {
+            try {
+                String name = json.getJSONObject(i).getString("name");
+                int score = json.getJSONObject(i).getInt("score");
+                long timestamp = json.getJSONObject(i).getLong("date_created");
+                scores.add(new Score(name, score, timestamp, gender));
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
 }
